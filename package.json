@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-restful-api",
+  "version": "1.0.0",
+  "description": "A simple nodejs-restful-api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cali93/NodeJS-RESTful-API.git"
+  },
+  "author": "Cali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cali93/NodeJS-RESTful-API/issues"
+  },
+  "homepage": "https://github.com/Cali93/NodeJS-RESTful-API#readme"
+}
