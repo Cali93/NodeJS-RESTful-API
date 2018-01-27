@@ -64,7 +64,7 @@ Dans le fichier package.json rajoutez la commande npm start :
 ## 4. Dans api/config/databas.js, déterminez le lien de la DB.
 ```
 module.exports = {
-  database: "mongodb://localhost:27017/gamegrinders",
+  database: "mongodb://localhost:27017/restapi",
   secret: "whatisthat"
 }
 ```
@@ -160,7 +160,7 @@ app.use((error, req, res, next) => {
 module.exports = app;
 ```
 
-## 6. Import de l'object app dans le fichier server.js
+## 6. Import de l'objet app dans le fichier server.js
 ```
 const http = require('http');
 const app = require('./app');
