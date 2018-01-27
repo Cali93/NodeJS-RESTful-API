@@ -30,6 +30,13 @@ npm i mongoose
 "il est aussi possible de les installer à la chaine :"
 npm i jsonwebtoken passport-jwt passport bcryptjs cors
 ```
+Dans le fichier package.json rajoutez la commande npm start :
+```
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  }
+ ```
 
 ## 3. Créez la structure de dossier :
 ```
@@ -53,9 +60,17 @@ npm i jsonwebtoken passport-jwt passport bcryptjs cors
 ├── README.md
 └── .gitignore
 ```
-## 4. Dans votre fichier app.js
 
-### Commencez par importer les différents modules installés précedemment :
+## 4. Dans api/config/databas.js, déterminez le lien de la DB.
+```
+module.exports = {
+  database: "mongodb://localhost:27017/gamegrinders",
+  secret: "whatisthat"
+}
+```
+## 5. Dans votre fichier app.js
+
+### Commencez par importer les différents modules installés précédemment :
 
 ```
 const express = require('express');
@@ -72,8 +87,7 @@ const config = require('./api/config/database');
 ```
 mongoose.Promise = require('bluebird');
 mongoose.connect(config.database, {
-    useMongoClient: true,
-    promiseLibrary: require('bluebird')
+  promiseLibrary: require('bluebird')
   })
   .then(() => console.log(`Connected to database ${config.database}`))
   .catch((err) => console.log(`Database error: ${err}`));
@@ -142,5 +156,20 @@ app.use((error, req, res, next) => {
 ```
 
 ### Exportation de l'objet app
-
+```
 module.exports = app;
+```
+
+## 6. Import de l'object app dans le fichier server.js
+```
+const http = require('http');
+const app = require('./app');
+
+const port = process.env.PORT || 3000;
+
+const server = http.createServer(app);
+
+app.listen(port, () => {
+  console.log('Server started on port ' + port);
+});
+```
