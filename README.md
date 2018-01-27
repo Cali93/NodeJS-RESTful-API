@@ -32,7 +32,7 @@ npm i jsonwebtoken passport-jwt passport bcryptjs cors
 ```
 
 ## 3. Créez la structure de dossier :
-
+```
 ├── api
 │   ├── config
 │   │   ├── database.js
@@ -52,7 +52,7 @@ npm i jsonwebtoken passport-jwt passport bcryptjs cors
 ├── package-lock.json
 ├── README.md
 └── .gitignore
-
+```
 ## 4. Dans votre fichier app.js
 
 ### Commencez par importer les différents modules installés précedemment :
